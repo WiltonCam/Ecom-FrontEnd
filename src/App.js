@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+import NavBar from './Components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import About from "./Components/About";
+import './App.css'
+
+
+import Edit from "./Pages/Edit";
+import FourOFour from "./Pages/FourOFour";
+import Home from "./Pages/Home";
+import Show from "./Pages/Show";
+
+function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <div className="container">
+        <Routes>
+          <Route path="./Pages/Home" element={<Home />} />
+          <Route path="./Componets/About" element={<About />} />
+          <Route path="./Componets/Merchs/:id" element={<Show />} />
+          <Route path="./Componets/Merchs/:id/edit" element={<Edit />} />
+          <Route path="*" element={<FourOFour />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
