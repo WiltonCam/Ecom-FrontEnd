@@ -1,25 +1,13 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
-function Merch({Merch}) {
+function Merch({merch}) {
   return (
     <div>
-     <p>
-        {Merch.is_Trending ? (
-          <span>🔥</span>
-        ) : (
-          <span>&nbsp; &nbsp; &nbsp;</span>
-        )}
-      </p>
-      <p>{Merch.name}</p>
+      <p>{merch.name}</p>
       <p>
-        <a href={Merch.url} target="_blank" rel="noreferrer">
-          {Merch.url}
-        </a>
-        <p>${Merch.cost}</p>
+        <p>${merch.cost}</p>
       </p>
-      <p>
-        <Link to={`/merch/${merch.id}`}>👟</Link>
-      </p>
+    <div classname='pp'><img src={`${merch.image}`} alt=''></img></div>
     </div>
   );
 }

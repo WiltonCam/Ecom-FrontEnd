@@ -1,4 +1,4 @@
-import Merchs from "../Components/Merchs";
+import Merchs from "../Componets/Merchs.js";
 function Home() {
     return (
       <div>

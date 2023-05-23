@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 function Merchs() {
   const [merchs, setMerchs] = useState([]);
   useEffect(() => {
-    axios.get(`${API}/Merch`).then((response) => {
+    axios.get(`${API}/merchs`).then((response) => {
         console.log(response.data)
       setMerchs(response.data)
     }).catch((e)=> {
@@ -19,7 +19,7 @@ function Merchs() {
       <section>
        <div>
             {merchs.map((merch) => {
-              return <Merch key={Merch.id} Merch={Merch} />;
+              return <Merch key={merch.id} merch={merch} />;
             })}
           </div>
       </section>

@@ -4,24 +4,23 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-function FootwareEditForm() {
+function MerchEditForm() {
   let { id } = useParams();
   let navigate = useNavigate();
 
-  const [footware, setFootware] = useState({
+  const [Merch, setMerch] = useState({
     name: "",
     cost: "",
     url: "",
     category: "",
-    is_Trending: false,
   });
 
-  const updateFootware = (updatedFootware) => {
+  const updateMerch = (updatedMerch) => {
     axios
-      .put(`${API}/footwares/${id}`, updatedFootware)
+      .put(`${API}/merchs/${id}`, updatedMerch)
       .then(
         () => {
-          navigate(`/footwares/${id}`);
+          navigate(`/merchs/${id}`);
         },
         (error) => console.error(error)
       )
@@ -29,23 +28,19 @@ function FootwareEditForm() {
   };
 
   const handleTextChange = (event) => {
-    setFootware({ ...footware, [event.target.id]: event.target.value });
-  };
-
-  const handleCheckboxChange = () => {
-    setFootware({ ...footware, is_Trending: !footware.is_Trending });
+    setMerch({ ...merch, [event.target.id]: event.target.value });
   };
 
   useEffect(() => {
-    axios.get(`${API}/footwares/${id}`).then(
-      (response) => setFootware(response.data),
+    axios.get(`${API}/merchs/${id}`).then(
+      (response) => setMerch(response.data),
       (error) => navigate(`/not-found`)
     );
   }, [id, navigate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateFootware(footware, id);
+    updateMerch(merch, id);
   };
   return (
     <div className="Edit">
@@ -53,48 +48,31 @@ function FootwareEditForm() {
         <label htmlFor="name">Name:</label>
         <input
           id="name"
-          value={footware.name}
+          value={merch.name}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of Footware"
+          placeholder="Item"
           required
-        />
-        <label htmlFor="url">URL:</label>
-        <input
-          id="url"
-          type="text"
-          pattern="http[s]*://.+"
-          required
-          value={footware.url}
-          placeholder="http://"
-          onChange={handleTextChange}
         />
         <label htmlFor="category">Category:</label>
         <input
           id="category"
           type="text"
           name="category"
-          value={footware.category}
+          value={merch.category}
           placeholder="sneaker, heel, sandal, ..."
           onChange={handleTextChange}
         />
-        <label htmlFor="is_favorite">Trending:</label>
-        <input
-          id="is_favorite"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={footware.is_Trending}
-        />
-
+       
         <br />
 
         <input type="submit" />
       </form>
-      <Link to={`/footware/${id}`}>
+      <Link to={`/merch/${id}`}>
         <button>Go back!</button>
       </Link>
     </div>
   );
 }
 
-export default FootwareEditForm;
+export default MerchEditForm;
