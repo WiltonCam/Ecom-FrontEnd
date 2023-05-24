@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Merch from "./Merch.js";
-
+import "../Styling/App.css"
 const API = process.env.REACT_APP_API_URL;
 
 function Merchs() {

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+// import { Button } from 'bootstrap';
 const NavBar = () => {
   return (
+    <div>
+{/* <Button as="a" variant="primary">
+    Button as link
+  </Button> */}
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Spoils</Link>
@@ -20,10 +24,14 @@ const NavBar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/Componets/Merchs">Show</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/new">Postings</Link>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+    </div>
   );
 }
 

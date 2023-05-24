@@ -1,10 +1,9 @@
-import Merchs from "../Componets/Merchs.js";
+
 function Home() {
     return (
-      <div>
+    <div className="text-center">
         <h2>Your old stuff</h2>
-        <h3>Is our newst necessity</h3>
-        <Merchs />
+        <h3>Is our newest necessity</h3>
       </div>
     );
   }

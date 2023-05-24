@@ -2,12 +2,14 @@
 
 function Merch({merch}) {
   return (
-    <div>
-      <p>{merch.name}</p>
-      <p>
-        <p>${merch.cost}</p>
-      </p>
-    <div classname='pp'><img src={`${merch.image}`} alt=''></img></div>
+<div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{merch.name}</h5>
+        <p className="card-text">${merch.cost}</p>
+        <div className="pics">
+          <img src={merch.image} alt="" className="card-img-top" />
+        </div>
+      </div>
     </div>
   );
 }

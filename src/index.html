@@ -1,23 +1,16 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>Online Shop</title>
   <link>rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"</link> 
-  <style>
-    body {
-      background-image: url('https://www.shutterstock.com/shutterstock/photos/1774812380/display_1500/stock-vector-falling-coins-background-casino-jackpot-or-win-concept-cash-fall-drop-or-coins-rain-on-black-1774812380.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-  </style>
+  <div className="card" style="width: 18rem; margin: 20px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+    <img src={merch.image} className="card-img-top" alt="" style="height: 200px; object-fit: cover;" />
+    <div className="card-body">
+      <h5 className="card-title" style="font-size: 1.2rem; font-weight: bold; margin: 0;">{merch.name}</h5>
+      <p className="card-text" style="font-size: 1rem; margin: 5px 0;">${merch.cost}</p>
+    </div>
+  </div>
 </head>
 <body>
   <div class="container">
