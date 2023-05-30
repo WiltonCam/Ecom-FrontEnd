@@ -8,7 +8,7 @@ function MerchEditForm() {
   let { id } = useParams();
   let navigate = useNavigate();
 
-  const [Merch, setMerch] = useState({
+  const [merch, setMerch] = useState({
     name: "",
     cost: "",
     url: "",

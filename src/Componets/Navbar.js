@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { Button } from 'bootstrap';
+
 const NavBar = () => {
   return (
-    <div>
-{/* <Button as="a" variant="primary">
-    Button as link
-  </Button> */}
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Spoils</Link>
@@ -16,7 +12,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/Pages/Home">Home</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
@@ -25,13 +21,12 @@ const NavBar = () => {
               <Link className="nav-link" to="/Componets/Merchs">Show</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/new">Postings</Link>
+              <Link className="nav-link" to="/Componets/MerchNewForm">New Post</Link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    </div>
   );
 }
 

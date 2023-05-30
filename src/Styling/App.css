@@ -3,6 +3,7 @@
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
+      
     }
 
     .card {
@@ -53,3 +54,4 @@
       background-color: beige;
       color: black;
     }
+

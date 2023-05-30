@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -12,7 +14,7 @@ function MerchNewForm() {
       .post(`${API}/merchs`, newMerch)
       .then(
         () => {
-          navigate(`/merchs`);
+          navigate(`/Componets/Merchs`);
         },
         (error) => console.error(error)
       )
@@ -23,6 +25,7 @@ function MerchNewForm() {
     name: "",
     cost: "",
     category: "",
+    image:"",
   });
 
   const handleTextChange = (event) => {
@@ -54,15 +57,36 @@ return (
           type="text"
           name="category"
           value={merch.category}
-          placeholder="sneaker, heel, sandal, ..."
+          placeholder="shoes,clothing,furniture ..."
           onChange={handleTextChange}
+          required
+        />
+                <label htmlFor="cost">Cost:</label>
+        <input
+          id="cost"
+          type="text"
+          name="cost"
+          value={merch.cost}
+          placeholder="0.00"
+          onChange={handleTextChange}
+          required
+        />
+                <label htmlFor="image">image:</label>
+        <input
+          id="image"
+          type="text"
+          name="image"
+          value={merch.image}
+          placeholder="Picture here"
+          onChange={handleTextChange}
+          required
         />
 
         <br />
 
         <input type="submit" />
       </form>
-      <Link to={`/merch/${id}`}>
+      <Link to={`/Componets/Merchs`}>
         <button>Go back!</button>
       </Link>
     </div>
