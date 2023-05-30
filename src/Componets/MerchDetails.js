@@ -17,8 +17,8 @@ function MerchDetails() {
       .then((response) => {
         setMerch(response.data);
       })
-      .catch((e) => {
-        console.warn("catch:", e);
+      .catch((error) => {
+        console.warn("catch:", error);
       });
   }, [id]);
 
@@ -39,9 +39,6 @@ function MerchDetails() {
 
   return (
     <article>
-      <h3>
-        {merch.is_Trending ? <span>⭐️</span> : null} {bookmark.name}
-      </h3>
       <h5>
         <span>
           <a href={merch.url}>{merch.name}</a>
@@ -64,7 +61,6 @@ function MerchDetails() {
           <button onClick={handleDelete}>Delete</button>
         </div>
       </div>
-      {/* <Reviews/> */}
     </article>
 
   );

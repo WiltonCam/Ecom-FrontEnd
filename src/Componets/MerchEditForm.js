@@ -24,7 +24,7 @@ function MerchEditForm() {
         },
         (error) => console.error(error)
       )
-      .catch((c) => console.warn("catch", c));
+      .catch((error) => console.warn("catch", error));
   };
 
   const handleTextChange = (event) => {
