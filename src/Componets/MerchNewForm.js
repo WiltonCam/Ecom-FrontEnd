@@ -14,7 +14,7 @@ function MerchNewForm() {
       .post(`${API}/merchs`, newMerch)
       .then(
         () => {
-          navigate(`/Componets/Merchs`);
+          navigate(`/merchs`);
         },
         (error) => console.error(error)
       )
